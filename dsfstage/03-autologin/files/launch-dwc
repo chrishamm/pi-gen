@@ -1,0 +1,3 @@
+#!/bin/bash
+
+chromium-browser --app=http://$(hostname) --start-fullscreen 

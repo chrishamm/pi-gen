@@ -1,0 +1,11 @@
+--- dsfstage.orig/rootfs/etc/lightdm/lightdm.conf
++++ dsfstage/rootfs/etc/lightdm/lightdm.conf
+@@ -123,7 +123,7 @@ display-setup-script=/usr/share/dispsetu
+ #session-setup-script=
+ #session-cleanup-script=
+ #autologin-guest=false
+-#autologin-user=
++autologin-user=pi
+ #autologin-user-timeout=0
+ #autologin-in-background=false
+ #autologin-session=

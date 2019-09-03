@@ -1,0 +1,13 @@
+--- dsfstage.orig/rootfs/etc/hostname
++++ dsfstage/rootfs/etc/hostname
+@@ -1 +1 @@
+-raspberrypi
++duet3
+--- dsfstage.orig/rootfs/etc/hosts
++++ dsfstage/rootfs/etc/hosts
+@@ -3,4 +3,4 @@
+ ff02::1		ip6-allnodes
+ ff02::2		ip6-allrouters
+ 
+-127.0.1.1	raspberrypi
++127.0.1.1	duet3
