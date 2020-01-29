@@ -122,6 +122,8 @@ if [ "$(id -u)" != "0" ]; then
 	exit 1
 fi
 
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export BASE_DIR
 
 if [ -f config ]; then
 	# shellcheck disable=SC1091
@@ -154,12 +156,13 @@ export IMG_DATE="${IMG_DATE:-"$(date +%Y-%m-%d)"}"
 export IMG_FILENAME="${IMG_FILENAME:-"${IMG_DATE}-${IMG_NAME}"}"
 export ZIP_FILENAME="${ZIP_FILENAME:-"image_${IMG_DATE}-${IMG_NAME}"}"
 
-BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export SCRIPT_DIR="${BASE_DIR}/scripts"
 export WORK_DIR="${WORK_DIR:-"${BASE_DIR}/work/${IMG_DATE}-${IMG_NAME}"}"
 export DEPLOY_DIR=${DEPLOY_DIR:-"${BASE_DIR}/deploy"}
 export DEPLOY_ZIP="${DEPLOY_ZIP:-1}"
 export LOG_FILE="${WORK_DIR}/build.log"
+
+export TARGET_HOSTNAME=${TARGET_HOSTNAME:-raspberrypi}
 
 export FIRST_USER_NAME=${FIRST_USER_NAME:-pi}
 export FIRST_USER_PASS=${FIRST_USER_PASS:-raspberry}
@@ -176,8 +179,6 @@ export KEYBOARD_LAYOUT="${KEYBOARD_LAYOUT:-English (UK)}"
 export TIMEZONE_DEFAULT="${TIMEZONE_DEFAULT:-Europe/London}"
 
 export GIT_HASH=${GIT_HASH:-"$(git rev-parse HEAD)"}
-
-export BASE_DIR
 
 export CLEAN
 export IMG_NAME
@@ -219,6 +220,11 @@ if [[ -n "${APT_PROXY}" ]] && ! curl --silent "${APT_PROXY}" >/dev/null ; then
 	exit 1
 fi
 
+if [[ -n "${WPA_PASSWORD}" && ${#WPA_PASSWORD} -lt 8 || ${#WPA_PASSWORD} -gt 63  ]] ; then
+	echo "WPA_PASSWORD" must be between 8 and 63 characters
+	exit 1
+fi
+
 mkdir -p "${WORK_DIR}"
 log "Begin ${BASE_DIR}"
 
@@ -246,7 +252,7 @@ for EXPORT_DIR in ${EXPORT_DIRS}; do
 	fi
 done
 
-if [ -x postrun.sh ]; then
+if [ -x ${BASE_DIR}/postrun.sh ]; then
 	log "Begin postrun.sh"
 	cd "${BASE_DIR}"
 	./postrun.sh
