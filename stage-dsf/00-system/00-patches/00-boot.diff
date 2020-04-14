@@ -1,5 +1,5 @@
---- dsfstage.orig/rootfs/boot/config.txt
-+++ dsfstage/rootfs/boot/config.txt
+--- stage-dsf.orig/rootfs/boot/config.txt
++++ stage-dsf/rootfs/boot/config.txt
 @@ -45,7 +45,7 @@
  # Uncomment some or all of these to enable the optional hardware interfaces
  #dtparam=i2c_arm=on
@@ -7,23 +7,5 @@
 -#dtparam=spi=on
 +dtparam=spi=on
  
- # Uncomment this to enable the lirc-rpi module
- #dtoverlay=lirc-rpi
-@@ -55,10 +55,17 @@
- # Enable audio (loads snd_bcm2835)
- dtparam=audio=on
- 
-+[pi3]
-+# Disable Bluetooth
-+dtoverlay=pi3-disable-bt
-+
- [pi4]
- # Enable DRM VC4 V3D driver on top of the dispmanx display stack
- dtoverlay=vc4-fkms-v3d
- max_framebuffers=2
- 
-+# Disable Bluetooth
-+dtoverlay=pi4-disable-bt
-+
- [all]
- #dtoverlay=vc4-fkms-v3d
+ # Uncomment this to enable infrared communication.
+ #dtoverlay=gpio-ir,gpio_pin=17
