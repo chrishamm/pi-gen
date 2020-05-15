@@ -1,16 +1,16 @@
-# pi-gen
+# DuetPi
 
 _Tool used to create the raspberrypi.org Raspbian images_
 
 
 ## Dependencies
 
-pi-gen runs on Debian based operating systems. Currently it is only supported on
+DuetPi runs on Debian based operating systems. Currently it is only supported on
 either Debian Buster or Ubuntu Xenial and is known to have issues building on
 earlier releases of these systems. On other Linux distributions it may be possible
 to use the Docker build described below.
 
-To install the required dependencies for pi-gen you should run:
+To install the required dependencies for DuetPi you should run:
 
 ```bash
 apt-get install coreutils quilt parted qemu-user-static debootstrap zerofree zip \
