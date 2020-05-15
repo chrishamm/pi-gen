@@ -1,7 +1,15 @@
 # DuetPi
 
-_Tool used to create the raspberrypi.org Raspbian images_
+_Tool used to create the raspberrypi.org Raspbian images_ (customized for Duet3D)
 
+## Prebuilt images
+
+There are two prebuilt DuetPi variants available:
+
+- [DuetPi](https://pkg.duet3d.com/DuetPi.zip) with a graphical user interface
+- [DuetPi Lite](https://pkg.duet3d.com/DuetPi-lite.zip) without a GUI
+
+Both come with a preinstalled and preconfigured variant of [DuetSoftwareFramework](https://github.com/Duet3D/DuetSoftwareFramework).
 
 ## Dependencies
 
