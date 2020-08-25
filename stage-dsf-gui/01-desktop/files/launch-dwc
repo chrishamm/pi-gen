@@ -1,0 +1,20 @@
+# Start Chromium
+chromium-browser --app=http://$(hostname) --start-fullscreen &
+pid=$!
+
+# Wait for DWC to be started
+while [ -z "$(wmctrl -l | cut -d ' ' -f 5- | grep -e "Duet Web Control" -e "$(hostname)")" ]; do
+        sleep 1
+done
+sleep 2
+
+# Focus other windows
+wmctrl -l | cut -d ' ' -f 5- | grep -v -e "Duet Web Control" -e "$(hostname)" | while read window; do
+        if [ ! -z "$window" ]; then
+                echo "Focusing $window"
+                wmctrl -R "$window"
+        fi
+done
+
+# Wait for Chromium to be closed again
+wait $pid
