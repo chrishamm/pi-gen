@@ -4,6 +4,7 @@
 mkdir "${ROOTFS_DIR}/boot/filaments"
 mkdir "${ROOTFS_DIR}/boot/gcodes"
 mkdir "${ROOTFS_DIR}/boot/macros"
+mkdir "${ROOTFS_DIR}/boot/menu"
 mkdir "${ROOTFS_DIR}/boot/sys"
 mkdir "${ROOTFS_DIR}/boot/www"
 

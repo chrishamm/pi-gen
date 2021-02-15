@@ -7,4 +7,8 @@ install files/wpa_supplicant.conf "${ROOTFS_DIR}/boot/wpa_supplicant.conf"
 on_chroot << EOF
 chown pi:root /etc/hostname
 chown pi:root /etc/hosts
+
+systemctl disable dnsmasq
+systemctl disable inetd
+systemctl disable proftpd
 EOF

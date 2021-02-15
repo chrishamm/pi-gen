@@ -4,3 +4,7 @@ bossa-cli
 gpiod
 minicom
 vim
+dnsmasq
+hostapd
+proftpd
+telnetd
