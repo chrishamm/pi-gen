@@ -1,0 +1,2 @@
+NOOBS_NAME="DuetPi (32-bit)"
+NOOBS_DESCRIPTION="A port of Debian for Duet controllers with the Raspberry Pi Desktop"

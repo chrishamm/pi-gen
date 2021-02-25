@@ -18,3 +18,5 @@ git
 lsmod:kmod
 bc
 jq
+qemu-nbd:qemu-utils
+kpartx
