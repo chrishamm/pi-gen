@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# Restart DCS on demand
+if !(systemctl -q is-active duetcontrolsever.service); then
+	sudo systemctl restart duetcontrolserver.service
+fi
+
 # Start Chromium
 chromium-browser --app=http://$(hostname) --start-fullscreen &
 pid=$!
