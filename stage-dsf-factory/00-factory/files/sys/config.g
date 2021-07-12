@@ -6,6 +6,6 @@
 
 ; Enable network
 if {network.interfaces[0].type = "ethernet"}
-    M552 P192.168.1.1 S1
+    M552 P192.168.1.14 S1
 else
     M552 S1
