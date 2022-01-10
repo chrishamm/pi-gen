@@ -1,4 +1,3 @@
-bluealsa
 blueman
 bossa-cli
 gpiod
@@ -6,5 +5,5 @@ minicom
 vim
 dnsmasq
 hostapd
-proftpd
+proftpd-core
 telnetd
