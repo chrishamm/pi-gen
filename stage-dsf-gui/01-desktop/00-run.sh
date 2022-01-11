@@ -10,7 +10,9 @@ install -m 755 -o 1000 -g 1000 files/view-dcs-log.desktop "${ROOTFS_DIR}/home/pi
 install -m 644 -o 1000 -g 1000 files/xscreensaver "${ROOTFS_DIR}/home/pi/.xscreensaver"
 
 on_chroot << EOF
-systemctl disable cups
+systemctl disable bluetooth hciuart cups cups-browsed
+apt-get purge -y pulseaudio system-config-printer
+apt-get autoremove -y
 
 update-alternatives --install /usr/share/desktop-base/duet3d.png desktop-background /usr/share/wallpapers/duet3d.png 80
 update-alternatives --set desktop-background /usr/share/wallpapers/duet3d.png
