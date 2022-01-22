@@ -467,3 +467,8 @@ To resolve this, ensure that the following files are available (install them if 
 ```
 
 You may also need to load the module by hand - run `modprobe binfmt_misc`.
+
+
+## Support requests
+
+Please use the [forum](https://forum.duet3d.com) for support requests.
