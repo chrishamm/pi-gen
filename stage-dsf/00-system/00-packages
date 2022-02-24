@@ -7,3 +7,4 @@ dnsmasq
 hostapd
 proftpd-core
 telnetd
+python3-pip
