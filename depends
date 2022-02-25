@@ -20,4 +20,3 @@ bc
 jq
 qemu-nbd:qemu-utils
 kpartx
-gpg
