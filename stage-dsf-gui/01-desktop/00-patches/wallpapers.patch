@@ -4,7 +4,7 @@
  [*]
  wallpaper_mode=crop
  wallpaper_common=1
--wallpaper=/usr/share/rpd-wallpaper/clouds.jpg
+-wallpaper=/usr/share/rpd-wallpaper/temple.jpg
 +wallpaper=/etc/alternatives/desktop-background
  desktop_bg=#d6d6d3d3dede
  desktop_fg=#e8e8e8e8e8e8
@@ -15,7 +15,7 @@
  [*]
  wallpaper_mode=crop
  wallpaper_common=1
--wallpaper=/usr/share/rpd-wallpaper/clouds.jpg
+-wallpaper=/usr/share/rpd-wallpaper/temple.jpg
 +wallpaper=/etc/alternatives/desktop-background
  desktop_bg=#d6d6d3d3dede
  desktop_fg=#e8e8e8e8e8e8

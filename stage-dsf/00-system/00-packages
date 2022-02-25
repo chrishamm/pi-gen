@@ -1,3 +1,4 @@
+bluealsa
 blueman
 bossa-cli
 gpiod
@@ -5,6 +6,6 @@ minicom
 vim
 dnsmasq
 hostapd
-proftpd-core
+proftpd
 telnetd
 python3-pip
