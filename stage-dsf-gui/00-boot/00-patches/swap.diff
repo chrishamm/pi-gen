@@ -1,13 +1,14 @@
-Index: jessie-stage2/rootfs/etc/dphys-swapfile
-===================================================================
---- jessie-stage2.orig/rootfs/etc/dphys-swapfile
-+++ jessie-stage2/rootfs/etc/dphys-swapfile
-@@ -13,7 +13,7 @@
+--- stage-dsf-gui.orig/rootfs/etc/dphys-swapfile
++++ stage-dsf-gui/rootfs/etc/dphys-swapfile
+@@ -13,7 +13,10 @@
  
  # set size to absolute value, leaving empty (default) then uses computed value
  #   you most likely don't want this, unless you have an special disk situation
 -CONF_SWAPSIZE=100
 +CONF_SWAPSIZE=512
++
++# do not apply maximum percentage, else the swap size is off on first boot
++CONF_MAXDISK_PCT=
  
  # set size to computed value, this times RAM size, dynamically adapts,
  #   guarantees that there is enough swap without wasting disk space on excess
