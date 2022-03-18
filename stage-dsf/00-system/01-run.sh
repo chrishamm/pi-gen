@@ -15,4 +15,6 @@ systemctl disable dnsmasq
 systemctl disable hostapd
 systemctl disable inetd
 systemctl disable proftpd
+
+apt-get purge -y rsyslog
 EOF
