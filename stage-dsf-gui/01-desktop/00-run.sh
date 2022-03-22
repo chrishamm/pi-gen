@@ -1,6 +1,5 @@
 #!/bin/bash -e
 
-install -m 755 files/launch-dwc "${ROOTFS_DIR}/usr/bin/launch-dwc"
 install -m 644 files/duet3d.png "${ROOTFS_DIR}/usr/share/wallpapers/duet3d.png"
 install -m 644 files/dwc.png "${ROOTFS_DIR}/usr/share/icons/dwc.png"
 
