@@ -21,3 +21,4 @@ jq
 qemu-nbd:qemu-utils
 kpartx
 gpg
+pigz
