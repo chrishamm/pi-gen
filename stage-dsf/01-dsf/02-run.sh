@@ -10,5 +10,5 @@ systemctl enable duetpluginservice
 systemctl enable duetpluginservice-root
 
 gpasswd -a pi dsf
-gpasswd -a pi video
+gpasswd -a dsf video
 EOF
