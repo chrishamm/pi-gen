@@ -9,3 +9,6 @@ if {network.interfaces[0].type = "ethernet"}
     M552 P192.168.1.14 S1
 else
     M552 S1
+    
+;Enable PanelDue
+M575 P1 S1 B57600
