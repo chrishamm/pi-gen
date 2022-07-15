@@ -1,4 +1,4 @@
-;test completed macro for mini 5+ v1.0 testing
+;test completed macro for mini 5+, 6HC, 6XD testing
 M30 "0:/sys/config.g"
 M30 "0:/sys/config.g.bak"
 M471 S"0:/sys/config_default.g" T"0:/sys/config.g" D1
