@@ -9,3 +9,4 @@ hostapd
 proftpd
 telnetd
 python3-pip
+usbmount
