@@ -9,7 +9,7 @@ install -m 755 -o 1000 -g 1000 files/view-dcs-log.desktop "${ROOTFS_DIR}/home/pi
 install -m 644 -o 1000 -g 1000 files/xscreensaver "${ROOTFS_DIR}/home/pi/.xscreensaver"
 
 on_chroot << EOF
-systemctl disable bluetooth hciuart cups cups-browsed
+systemctl disable cups cups-browsed
 apt-get purge -y pulseaudio system-config-printer
 apt-get autoremove -y
 
