@@ -11,6 +11,7 @@ jobs:
       - uses: usimd/pi-gen-action@v1
         id: build
         with:
+          image-name: DuetPi
           pi-gen-repository: Duet3D/DuetPi
           release: buster
 
