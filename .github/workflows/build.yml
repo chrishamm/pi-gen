@@ -1,0 +1,24 @@
+name: Build DuetPi
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      # Refresh 
+      - name: Refresh package lists
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: pkg.duet3d.com
+          username: ${{ secrets.PKG_SSH_USER }}
+          key: ${{ secrets.PKG_SSH_KEY }}
+          script: |
+            cd /mnt/volume_ams3_01/pi-gen
+            git stash
+            git pull
+            git stash apply
+            git stash clear
+            sudo ./clean-build.sh # contains CLEAN=1 time ./build.sh
+
