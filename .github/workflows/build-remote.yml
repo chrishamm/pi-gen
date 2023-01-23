@@ -20,5 +20,5 @@ jobs:
             git pull
             git stash apply
             git stash clear
-            sudo ./clean-build.sh # contains CLEAN=1 time ./build.sh
+            sudo ./clean-build.sh
 
