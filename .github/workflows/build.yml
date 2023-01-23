@@ -7,16 +7,16 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      pi-gen-upload-image:
-        steps:
-          - uses: usimd/pi-gen-action@v1
-            id: build
-            with:
-              pi-gen-repository: Duet3D/DuetPi
-              release: buster
+      # Build image
+      - uses: usimd/pi-gen-action@v1
+        id: build
+        with:
+          pi-gen-repository: Duet3D/DuetPi
+          release: buster
 
-          - uses: actions/upload-artifact@v3
-            with:
-              name: pi-gen-image
-              path: ${{ steps.build.outputs.image-path }}
+      # Upload image
+      - uses: actions/upload-artifact@v3
+        with:
+          name: pi-gen-image
+          path: ${{ steps.build.outputs.image-path }}
 
