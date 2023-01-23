@@ -14,6 +14,10 @@ jobs:
           image-name: DuetPi
           pi-gen-repository: Duet3D/DuetPi
           release: buster
+          use-qcow: 0
+          stage-list: stage0 stage1 stage2 stage-dsf stage3 stage4 stage-dsf-gui stage-dsf-factory
+          hostname: duet3
+          enable-ssh: 1
 
       # Upload image
       - uses: actions/upload-artifact@v3
