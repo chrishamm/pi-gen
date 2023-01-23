@@ -16,9 +16,6 @@ jobs:
           key: ${{ secrets.PKG_SSH_KEY }}
           script: |
             cd /mnt/volume_ams3_01/pi-gen
-            git stash
             git pull
-            git stash apply
-            git stash clear
             sudo ./clean-build.sh
 
