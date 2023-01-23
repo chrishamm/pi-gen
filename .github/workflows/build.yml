@@ -13,7 +13,7 @@ jobs:
       # Install dependencies and run the build process
       - name: Install dependencies
         run: |
-          sudo apt-get install -y quilt parted debootstrap jq kpartx pigz
+          sudo apt-get install -y quilt parted qemu-user-static libarchive-tools qemu-utils debootstrap jq kpartx pigz
 
       # Run the build process
       - name: Build image
