@@ -10,16 +10,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Install dependencies and run the build process
-      - name: Install dependencies
-        run: |
-          sudo apt-get install -y quilt parted qemu-user-static libarchive-tools qemu-utils debootstrap jq kpartx pigz
-
       # Run the build process
       - name: Build image
         run: |
           mkdir out
-          sudo DEPLOY_COMPRESSION=none DEPLOY_DIR=./out ./build.sh
+          sudo DEPLOY_COMPRESSION=none DEPLOY_DIR=./out ./build-docker.sh
 
       # Upload lite image
       - uses: actions/upload-artifact@v3
