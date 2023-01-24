@@ -7,17 +7,14 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Run the build process
       - name: Build image
         run: |
           mkdir out
           sudo ./build-docker.sh
 
-      # Get the image date
-      - name: Get image name
+      - name: Get image date
         run: |
           IMG_NAME=(deploy/image_*-DuetPi.zip)
           if [[ $IMG_NAME =~ ^deploy/image_(.*)-DuetPi.zip$ ]]; then
@@ -27,12 +24,23 @@ jobs:
             exit 1
           fi
 
-      # Make new release
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Make new release
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: ${{ env.IMG_DATE }}
           prerelease: false
           title: "DuetPi ${{ env.IMG_DATE }} (buster)"
           files: deploy/image_*.zip
+
+      - name: Redirect files from pkg.duet3d.com
+        uses: appleboy/ssh-action@v-1.1.7
+        with:
+          host: pkg.duet3d.com
+          username: ${{ secrets.PKG_SSH_USER }}
+          key: ${{ secrets.PKG_SSH_KEY }}
+          script: |
+            echo "Redirect /DuetPi.zip https://github.com/Duet3D/DuetPi/releases/latest/download/image_${{ env.IMG_DATE }}-DuetPi.zip" > /var/www/pkg/.htaccess
+            echo "Redirect /DuetPi-lite.zip https://github.com/Duet3D/DuetPi/releases/latest/download/image_${{ env.IMG_DATE }}-DuetPi-lite.zip" >> /var/www/pkg/.htaccess
+            echo "Redirect /DuetPi-factory.zip https://github.com/Duet3D/DuetPi/releases/latest/download/image_${{ env.IMG_DATE }}-DuetPi-factory.zip" >> /var/www/pkg/.htaccess
 

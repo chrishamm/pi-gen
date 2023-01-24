@@ -7,9 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      # Kick off image build on pkg server
       - name: Start image build
-        uses: appleboy/ssh-action@v0.1.7
+        uses: appleboy/ssh-action@v-1.1.7
         with:
           host: pkg.duet3d.com
           username: ${{ secrets.PKG_SSH_USER }}
