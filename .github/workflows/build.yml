@@ -27,7 +27,7 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: ${{ env.IMG_DATE }}
+          automatic_release_tag: "buster-${{ env.IMG_DATE }}"
           prerelease: false
           title: "DuetPi ${{ env.IMG_DATE }} (buster)"
           files: deploy/image_*.zip
