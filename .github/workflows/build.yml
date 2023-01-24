@@ -16,24 +16,23 @@ jobs:
           mkdir out
           sudo ./build-docker.sh
 
-      # Upload lite image
-      - uses: actions/upload-artifact@v3
-        with:
-          name: DuetPi-lite
-          path: deploy/image_*DuetPi-lite.zip
-          if-no-files-found: error
+      # Get the image date
+      - name: Get image name
+        run: |
+          IMG_NAME=(deploy/image_*-DuetPi.zip)
+          if [[ $IMG_NAME =~ ^deploy/image_(.*)-DuetPi.zip$ ]]; then
+            echo "IMG_DATE=${BASH_REMATCH[1]}" >> $GITHUB_ENV
+          else
+            echo "Error: Image not found!"
+            exit 1
+          fi
 
-      # Upload main image
-      - uses: actions/upload-artifact@v3
+      # Make new release
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          name: DuetPi
-          path: deploy/image_*DuetPi.zip
-          if-no-files-found: error
-
-      # Upload factory image
-      - uses: actions/upload-artifact@v3
-        with:
-          name: DuetPi-factory
-          path: deploy/image_*DuetPi-factory.zip
-          if-no-files-found: error
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: ${{ env.IMG_DATE }}
+          prerelease: false
+          title: "DuetPi ${{ env.IMG_DATE }} (buster)"
+          files: deploy/image_*.zip
 
