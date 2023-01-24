@@ -9,6 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Enable binfmt support
+        run: |
+          sudo apt-get install -y binfmt-support
+          sudo modprobe binfmt_misc
+          sudo update-binfmts --enable
+
       - name: Build image
         run: |
           mkdir out
