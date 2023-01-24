@@ -28,7 +28,7 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: ${{ env.IMG_DATE }}
+          automatic_release_tag: "bullseye-${{ env.IMG_DATE }}"
           prerelease: true
           title: "DuetPi ${{ env.IMG_DATE }} (bullseye)"
           files: deploy/image_*.zip
