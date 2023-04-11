@@ -16,5 +16,6 @@ apt-get autoremove -y
 update-alternatives --install /usr/share/desktop-base/duet3d.png desktop-background /usr/share/wallpapers/duet3d.png 80
 update-alternatives --set desktop-background /usr/share/wallpapers/duet3d.png
 
+raspi-config nonint do_camera 0
 raspi-config nonint do_glamor 1
 EOF
