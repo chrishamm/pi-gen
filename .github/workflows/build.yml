@@ -11,7 +11,6 @@ jobs:
 
       - name: Build image
         run: |
-          sudo docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
           sudo ./build-docker.sh
 
       - name: Get image date
