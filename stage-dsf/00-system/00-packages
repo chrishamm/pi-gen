@@ -9,3 +9,4 @@ proftpd-core
 telnetd
 python3-pip
 usbmount
+libcamera-apps
