@@ -10,3 +10,4 @@ telnetd
 python3-pip
 usbmount
 libcamera-apps
+libcamera-tools
