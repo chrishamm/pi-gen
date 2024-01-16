@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$(sha256sum /boot/firmware/sys/config.g)" != "CONFIG_G_SHA256SUM" ]]; then
+if [[ "$(sha256sum /boot/firmware/sys/config.g | cut -d ' ' -f 1)" != "CONFIG_G_SHA256SUM" ]]; then
 	# Overwrite sys files
 	cp -rf /boot/firmware/sys/* /opt/dsf/sd/sys/
 
@@ -24,7 +24,9 @@ if [[ "$(sha256sum /boot/firmware/sys/config.g)" != "CONFIG_G_SHA256SUM" ]]; the
 		cp -rf /boot/firmware/macros/* /opt/dsf/sd/macros/
 	fi
 
-	# Adjust ownership again
+	# Adjust ownership and permissions again
 	chown -R dsf:dsf /opt/dsf/sd
+	chmod -R 660 /opt/dsf/sd/**
+	chmod -R 770 /opt/dsf/sd/**/
 fi
 

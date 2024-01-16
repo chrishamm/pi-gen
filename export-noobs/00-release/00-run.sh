@@ -19,7 +19,7 @@ ROOT_SIZE="$(xz --robot -l "${NOOBS_DIR}/root.tar.xz"  | grep totals | cut -f 5)
 BOOT_SIZE="$(( BOOT_SIZE / 1024 / 1024 + 1))"
 ROOT_SIZE="$(( ROOT_SIZE / 1024 / 1024 + 1))"
 
-BOOT_NOM="2048"
+BOOT_NOM="256"
 ROOT_NOM="$(echo "$ROOT_SIZE" | awk '{printf "%.0f", (($1 + 400) * 1.2) + 0.5 }')"
 
 mv "${NOOBS_DIR}/OS.png" "${NOOBS_DIR}/${NOOBS_NAME// /_}.png"

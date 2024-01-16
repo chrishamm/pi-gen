@@ -14,7 +14,7 @@ install files/config.g "${ROOTFS_DIR}/boot/firmware/sys/config.g"
 
 # Install one-time service to overwrite config.g if it diverges from the shipped default
 CONFIG_G_SHA256SUM=$(sha256sum files/config.g | cut -d ' ' -f 1)
-install -m755 files/replace-dsf-configs "${ROOTFS_DIR}/usr/bin/replace-dsf-configs"
+install -m 755 files/replace-dsf-configs "${ROOTFS_DIR}/usr/bin/replace-dsf-configs"
 sed -i "s/CONFIG_G_SHA256SUM/$CONFIG_G_SHA256SUM/g" "${ROOTFS_DIR}/usr/bin/replace-dsf-configs"
 
 install -m 644 files/replace-dsf-configs.service "${ROOTFS_DIR}/usr/lib/systemd/system/replace-dsf-configs.service"

@@ -1,0 +1,11 @@
+[Unit]
+Description=Set DSF chipdev
+Before=duetcontrolserver.service
+
+[Service]
+ExecStart=/usr/bin/set-dsf-chipdev
+ExecStartPost=systemctl disable set-dsf-chipdev.service
+Type=oneshot
+
+[Install]
+WantedBy=basic.target
