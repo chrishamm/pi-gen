@@ -17,7 +17,7 @@
          "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
  
 +        // Upgrade DuetPi components via Duet3D package server
-+	"origin=pkg.duet3d.com";
++	"site=pkg.duet3d.com";
 +
          // Archive or Suite based matching:
          // Note that this will silently match a different release after
