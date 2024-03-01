@@ -1,10 +1,19 @@
-# pi-gen
+# DuetPi
 
 Tool used to create Raspberry Pi OS images, and custom images based on Raspberry Pi OS,
-which was in turn derived from the Raspbian project.
+which was in turn derived from the Raspbian project. This version is customized for Duet3D.
 
 **Note**: Raspberry Pi OS 32 bit images are based primarily on Raspbian, while
 Raspberry Pi OS 64 bit images are based primarily on Debian.
+
+## Prebuilt images
+
+There are two prebuilt DuetPi variants available:
+
+- DuetPi with a graphical user interface
+- DuetPi Lite without a GUI
+
+Both come with a preinstalled and preconfigured variant of [DuetSoftwareFramework](https://github.com/Duet3D/DuetSoftwareFramework).
 
 ## Dependencies
 
