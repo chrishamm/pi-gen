@@ -1,0 +1,52 @@
+{
+  "os_list": [
+    {
+      "name": "DuetPi (64-bit)",
+      "description": "Raspberry Pi OS (Bookworm) with GUI and software for Duet3D controllers",
+      "url": "https://github.com/Duet3D/DuetPi/releases/download/bookworm-2024-04-19/image_2024-04-19-DuetPi-arm64.zip",
+      "icon": "https://github.com/Duet3D/DuetPi/raw/rpi-imager/duet3d.png",
+      "release_date": "2024-04-19",
+      "extract_size": 6392119296,
+      "extract_sha256": "daa0b8d3d39b21eba00fcc24be0fa58b10d4a2e3370ec29b297a6844a95875f3",
+      "image_download_size": 1866345002,
+      "image_download_sha256": "bf8e735f9989f00f565ceb6c71d74db15b3abdd00895c2c0a71f3b8e59687bb0",
+      "init_format": "systemd"
+    },
+    {
+      "name": "DuetPi (32-bit)",
+      "description": "Raspberry Pi OS (Bookworm) with GUI and software for Duet3D controllers",
+      "url": "https://github.com/Duet3D/DuetPi/releases/download/bookworm-2024-04-19/image_2024-04-19-DuetPi.zip",
+      "icon": "https://github.com/Duet3D/DuetPi/raw/rpi-imager/duet3d.png",
+      "release_date": "2024-04-19",
+      "extract_size": 5825888256,
+      "extract_sha256": "91f12e4b314fa03da92fd4244092e2b289ea231d3e4c2ea6f32a7d949b42a22a",
+      "image_download_size": 1927976344,
+      "image_download_sha256": "902838648f95538f9598193a5d2138e8d7783e1558f42ef9961cc58566732eb6",
+      "init_format": "systemd"
+    },
+    {
+      "name": "DuetPi Lite (64-bit)",
+      "description": "Headless Raspberry Pi OS (Bookworm) with software for Duet3D controllers",
+      "url": "https://github.com/Duet3D/DuetPi/releases/download/bookworm-2024-04-19/image_2024-04-19-DuetPi-lite.zip",
+      "icon": "https://github.com/Duet3D/DuetPi/raw/rpi-imager/duet3d.png",
+      "release_date": "2024-04-19",
+      "extract_size": 3875536896,
+      "extract_sha256": "e5cc3c5956f7ee69e5c95e6af4a8dbf41a1dc3bba0c9e7a15fec8f530b030258",
+      "image_download_size": 1031395397,
+      "image_download_sha256": "ae40076735e19299bbe75cff1c479976fc8bde072da1dda9a258f678dd24da43",
+      "init_format": "systemd"
+    },
+    {
+      "name": "DuetPi Lite (32-bit)",
+      "description": "Headless Raspberry Pi OS (Bookworm) with software for Duet3D controllers",
+      "url": "https://github.com/Duet3D/DuetPi/releases/download/bookworm-2024-04-19/image_2024-04-19-DuetPi-lite.zip",
+      "icon": "https://github.com/Duet3D/DuetPi/raw/rpi-imager/duet3d.png",
+      "release_date": "2024-04-19",
+      "extract_size": 3586129920,
+      "extract_sha256": "c7c22f3aeff4c7e6947ccc285953ff6d18eb7ae4eb5d51780ab99ec9cd4431b5",
+      "image_download_size": 1103757819,
+      "image_download_sha256": "c7c22f3aeff4c7e6947ccc285953ff6d18eb7ae4eb5d51780ab99ec9cd4431b5",
+      "init_format": "systemd"
+    }
+  ]
+}
