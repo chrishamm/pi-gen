@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# On the Raspberry Pi 5 the gpiochip device has changed from gpiochip0 to gpiochip4
-if [[ -n "$(cat /proc/cpuinfo | grep -e 'Raspberry Pi 5')" ]]; then
-	jq '.GpioChipDevice = "/dev/gpiochip4"' /opt/dsf/conf/config.json > /opt/dsf/conf/config.json.new
-	mv /opt/dsf/conf/config.json.new /opt/dsf/conf/config.json
-	chown dsf:dsf /opt/dsf/conf/config.json
-fi
-
