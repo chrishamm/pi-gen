@@ -20,7 +20,7 @@
       "release_date": "2024-09-19",
       "extract_size": 5721030656,
       "extract_sha256": "2fa7c0ec3cbd431b5ec2b197475d65f74f45f6e13cbf44a0030a0e412499d3fc",
-      "image_download_size": 1927976344,
+      "image_download_size": 1931004641,
       "image_download_sha256": "e303dc904dc9d810f88488ccf073053ce3dfe514b2e071de38fd94007e403706",
       "init_format": "systemd"
     },
